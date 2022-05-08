@@ -1,0 +1,17 @@
+{
+  "folders": [
+	{
+		"path": "../../.."
+	},
+	{
+		"path": "../../../../Shortened-Url-Shortener"
+	},
+	{
+		"path": "../../../../Url-Shortener-API"
+	},
+	{
+		"path": "../../../../Url-Shortener-Frontend"
+	}
+],
+  "settings": {}
+}

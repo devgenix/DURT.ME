@@ -11,7 +11,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>{% block title %} {% endblock %} </title>
+      <title>{% block title %}{% endblock %} </title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -22,7 +22,7 @@
       <!-- Responsive-->
       <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
       <!-- fevicon -->
-      <link rel="icon" href="{% static 'images/fevicon.png' %} " type="image/gif" />
+      <link rel="icon" href="{% static 'images/favicon.svg' %} " type="image/gif" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}" />
       <!-- Font Awesome -->
@@ -44,31 +44,32 @@
    <!-- end loader -->
    <!-- header -->
    <header>
-   <nav>
-      <!-- Simple Navigation Pattern -->
-      <div class="navv container">
-         <img class="img-fluid" id="logo" src="{% static 'images/logo1.svg' %}" width = "20%" height = "0%">
-         {% if user.is_authenticated %}
-            <div class="dropdown show" id="navlist">
-               <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Hi, {{user.first_name}}
-               </a>
-            
-               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-               <a class="dropdown-item" href="{% url 'users-dashboard' %}" >Dashboard</a>
-               <a class="dropdown-item" href="{% url 'users-profile' %}" >Profile</a>
-               <a class="dropdown-item" href="{% url 'logout' %}" >Logout</a>
+      <nav>
+         <!-- Simple Navigation Pattern -->
+         <div class="navv container">
+            <img class="img-fluid" id="logo" src="{% static 'images/logo1.svg' %}" width = "12%" height = "0%">
+            {% if user.is_authenticated %}
+               <div class="dropdown show" id="navlist">
+                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Hi, {{user.first_name}}
+                  </a>
+               
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                     <a class="dropdown-item" href="{% url 'users-home' %}" >Home</a>
+                     <a class="dropdown-item" href="{% url 'users-dashboard' %}" >Dashboard</a>
+                  <a class="dropdown-item" href="{% url 'users-profile' %}" >Profile</a>
+                  <a class="dropdown-item" href="{% url 'logout' %}" >Logout</a>
+                  </div>
                </div>
-            </div>
-         {% else %}
-            <div class="dropdown show" id="navlist">
-               <a class="btn btn-secondary" href="{% url 'login' %}" >
-               Login
-               </a>
-            </div>
-         {% endif %}
-      </div>
-   </nav>
+            {% else %}
+               <div class="dropdown show" id="navlist">
+                  <a class="btn btn-secondary" href="{% url 'login' %}" >
+                  Login
+                  </a>
+               </div>
+            {% endif %}
+         </div>
+      </nav>
    </header>
    <!-- end header inner -->
 

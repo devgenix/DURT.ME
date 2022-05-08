@@ -7,16 +7,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from django.shortcuts import render
+from unauth.models import AuthModel
 from .models import UrlModel
 from .serializers import UrlSerializer
-
-
-def home(request):
-    #
-    # Renders the index page for faraday.
-    #
-    
-    return HttpResponseRedirect('https://faraday.africa')
 
 
 """The view for redirect a short url to the original one"""
@@ -27,8 +20,11 @@ def Redirect(request, url):
             original_url = get_object_or_404(UrlModel, short_url=url).original_url
             return HttpResponseRedirect(redirect_to=original_url)
         except Http404:
-            pass
-        return render(request, "core/404.html")
+            try:
+                original_url = get_object_or_404(AuthModel, short_url=url).original_url
+                return HttpResponseRedirect(redirect_to=original_url)
+            except Http404:
+                return render(request, "users/404.html")
 
 
 @api_view(['POST'])  

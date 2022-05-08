@@ -1,49 +1,53 @@
 {% extends "users/base.html" %}
 {% load static %}
-{% block title %} | Link Shortener {% endblock title%}
+{% block title %}DURT.ME | Link Shortener {% endblock title%}
 {% block content %}
 
-      <!-- banner -->
-      <section class="banner_main">
-         <div class="container">
-         <div class="row d_flex">
-            <div class="col-md-6">
-               <div class="text-bg">
-                  <h1>Link Shortener</h1>
-                  {% if user.is_authenticated %}
-                     <p>Welcome, {{user.first_name}}.<br>Create shortened links or visit your dashboard to see how your link are performing.</p>
-                     <a class="read_more">Dashboard</a>
-                  {% else %}
-                     <p>Hi, Visitor. Links you create will be deleted after three months.
-                        Do more than just shortening links, login to edit your links, track visits anonymously and preserve your links forever.</p>
-                     <a class="read_more" href="{% url 'login' %}">Login or Signup</a>
-                  {% endif %}
-               </div>
-            </div>
-            <div class="col-md-6">
-               <form id="request" class="main_form">
-                  <div class="row">
-                     <div class="col-md-12 ">
-                        <input class="contactus" placeholder="Original long link (https://www.google.com/search?q=what+is+a+link+shortener%3F) type="type" name="Name"> 
-                     </div>
-                     <div class="col-md-12">
-                        <input class="contactus" placeholder="Unique name (mlsc.me/link)" type="type" name="Email"> 
-                     </div>
-                     {% comment %} <div class="col-md-12">
-                        <input class="contactus" placeholder=" Phone Number" type="type" name="Phone Number">                          
-                     </div>
-                     <div class="col-md-12">
-                        <textarea class="contactus" placeholder="Message" type="type" Message="Name">Message </textarea>
-                     </div> {% endcomment %}
-                     <div class="col-sm-12">
-                        <button class="send_btn">Make Short</button>
-                     </div>
-                  </div>
-               </form>
+<!-- banner -->
+   <section class="banner_main">
+      <div class="container">
+      <div class="row d_flex">
+         <div class="col-md-6">
+            <div class="text-bg">
+               <h1>DURT.ME</h1>
+               <p>Hi, Visitor. Links you create will be deleted after three months.
+                  Do more than just shortening links, login to edit your links, track visits anonymously and preserve your links forever.</p>
+               <a class="read_more" href="{% url 'login' %}">Login or Signup</a>
             </div>
          </div>
-      </section>
-      <!-- end banner -->
+         <div class="col-md-6">
+            <section id="newsletter" class="newsletter">
+               <form id="request" class="main_form newsletterForm">
+                  {% csrf_token %}
+                  <div class="row">
+
+                     <div class="col-md-12 ">
+                        <input id="linkk" type="text" name="email" id="email" class="contactus link" placeholder="Original long link (https://www.google.com/search?q=what+is+a+link+shortener%3F)" > 
+                        <div class="error_isActiveText" style="display: block;"></div>
+                     </div>
+
+                     <div class="col-md-12">
+                        <input id="alias" type="text" name="name" class="contactus short" placeholder="Unique name (mlsc.me/link)">
+                        <div class="url_error_isActiveText" style="display: block;"></div>
+                     </div>
+
+                     <div class="col-sm-12">
+                        <button id="submitButton" class="send_btn submitbutton submit">Make Short</button>
+                     </div>
+
+                     <div class="server_error_isActiveText" style="display: none; color: white;">Server Internal error, please contact <a style="color:#2A2E32; font-weight: bold;" href="mailto:admin@faraday.africa">admin</a> and try again later</div>
+                     <div id="success_isActiveText" class="row success_isActiveText" style="display: none;">
+                        <a class="copy-text" target="_BLANK" href=""></a>
+                        <button class="btn btn-dark copy-button" >Copy</button>
+                     </div>
+
+                  </div>
+               </form>
+            </section>
+         </div>
+      </div>
+   </section>
+<!-- end banner -->
 
 {% endblock content %}
 

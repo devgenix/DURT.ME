@@ -1,11 +1,8 @@
 from django.urls import path
-from .views import home, profile, RegisterView, Dashboard
-from API.views import Redirect
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', home, name='users-home'),
-    path('<str:url>', Redirect, name='redirect'),
-    path('register/', RegisterView.as_view(), name='users-register'),
-    path('profile/', profile, name='users-profile'),
-    path('dashboard/', Dashboard, name='users-dashboard'),
-]
+
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

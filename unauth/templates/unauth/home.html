@@ -1,0 +1,52 @@
+{% extends "unauth/base.html" %}
+{% load static %}
+{% block title %}DURT.ME | Link Shortener {% endblock title%}
+{% block content %}
+
+   <!-- banner -->
+   <section class="banner_main">
+      <div class="container">
+      <div class="row d_flex">
+         <div class="col-md-6">
+            <div class="text-bg">
+               <h1>DURT.ME</h1>
+               <p>Welcome, {{user.first_name}}.<br>Create short links or visit your dashboard to see how your links are performing.</p>
+               <a href="{% url 'users-dashboard' %}" class="read_more">Dashboard</a>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <section id="newsletter" class="newsletter">
+               <form id="request" class="main_form newsletterForm">
+                  {% csrf_token %}
+                  <div class="row">
+
+                     <div class="col-md-12 ">
+                        <input id="linkk" type="text" name="email" id="email" class="contactus link" placeholder="Original long link (https://www.google.com/search?q=what+is+a+link+shortener%3F)" > 
+                        <div class="error_isActiveText" style="display: block;"></div>
+                     </div>
+
+                     <div class="col-md-12">
+                        <input id="alias" type="text" name="name" class="contactus short" placeholder="Unique name (mlsc.me/link)">
+                        <div class="url_error_isActiveText" style="display: block;"></div>
+                     </div>
+
+                     <div class="col-sm-12">
+                        <button id="submitButton" class="send_btn submitbutton submit">Make Short</button>
+                     </div>
+
+                     <div class="server_error_isActiveText" style="display: none; color: white;">Server Internal error, please contact <a style="color:#2A2E32; font-weight: bold;" href="mailto:emmanueln644@gmail.com">admin</a> and try again later</div>
+                     <div id="success_isActiveText" class="row success_isActiveText" style="display: none;">
+                        <a class="copy-text" target="_BLANK" href="">https://127.0.0.1:8000/meeee</a>
+                        <button class="btn btn-dark copy-button" >Copy</button>
+                     </div>
+
+                  </div>
+               </form>
+            </section>
+         </div>
+      </div>
+   </section>
+   <!-- end banner -->
+
+{% endblock content %}
+

@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UserConfig',
+    'API.apps.ApiConfig',
+    'unauth.apps.UnauthConfig',
     'social_django',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
-    'user_management.middleware.CustomCorsMiddleware'
+    'user_management.middleware.CustomCorsMiddleware',
 
 ]
 
