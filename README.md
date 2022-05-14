@@ -1,4 +1,4 @@
-# Django-registration-and-login-system
+# DURT.ME
 This web app has been developed using the popular Django framework and Bootstrap for the frontend. My motivation to build this project is so that I can learn about Django and tighten up my skills. This mini-app can be easily integrated into a bigger system project that needs to have a registration and login system.
 
 ### Basic Features of The App
@@ -11,6 +11,10 @@ This web app has been developed using the popular Django framework and Bootstrap
 * Remember me – Cookie Option, users don’t have to provide credentials every time they hit the site
 * Forgot Password – Users can easily retrieve their password if they forget it 
 * Admin Panel – admin can CRUD users
+* Create Shortened link
+* Logged in users can edit already created shortened links.
+* Logged in users can see analytics such as number of vists, time of click and location of visit on shortened links.
+* 
 
 ![ScreenShot](https://user-images.githubusercontent.com/66206865/131695930-648342b0-010b-44b2-a419-15ad54d47869.png)
 
