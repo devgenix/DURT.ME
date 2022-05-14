@@ -6,7 +6,7 @@ from decouple import config
 def main():
     if config('DJANGO_DEVELOPMENT') == 'dev':
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'user_management.settings.dev')
-    else:
+    elif config('DJANGO_DEVELOPMENT') == 'prod':
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'user_management.settings.settings')
     try:
         from django.core.management import execute_from_command_line
