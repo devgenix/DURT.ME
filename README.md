@@ -15,7 +15,7 @@ This web app has been developed using the popular Django framework and Bootstrap
 * Logged in users can edit already created shortened links.
 * Logged in users can see analytics such as number of vists, time of click and location of visit on shortened links.
 
-![ScreenShot](https://photos.app.goo.gl/2SfHUpsBdBSU3Jcu9)
+![ScreenShot](./users/static/images/image.png)
 
 
 ### Quick Start
