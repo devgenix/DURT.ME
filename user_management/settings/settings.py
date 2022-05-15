@@ -51,7 +51,7 @@ MIDDLEWARE = [
 
 ]
 
-ROOT_URLCONF__name__ = 'user_management.urls'
+ROOT_URLCONF = 'user_management.urls'
 
 TEMPLATES = [
     {
