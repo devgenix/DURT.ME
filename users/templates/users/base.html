@@ -73,7 +73,7 @@
    <!-- end header inner -->
 
    <!--Any flash messages pop up in any page because this is the base template-->
-   {% if messages %}
+   {% comment %} {% if messages %}
       <div class="alert alert-dismissible" role="alert">
       {% for message in messages %}
          <div class="alert alert-{{ message.tags }}">{{ message }}</div>
@@ -82,7 +82,7 @@
          <span aria-hidden="true">&times;</span>
       </button>
       </div>
-   {% endif %}
+   {% endif %} {% endcomment %}
    
    <body>
       {% block content %}{% endblock %}
