@@ -8,7 +8,7 @@
       <div class="container">
       <div class="row d_flex">
          <div class="col-md-6">
-            <div class="col-md-6">
+            <div class="col-md-10">
                {% if user.is_authenticated %}
                <div class="text-bg">
                   <h1>DURT.ME</h1>
@@ -17,10 +17,10 @@
                </div>
                {% else %}
                <div class="text-bg">
-                  <h1>DURT.ME</h1>
-                  <p>Hi, Visitor. Links you create will be deleted after three months.
-                     Do more than just shortening links, login to edit your links, track visits anonymously and preserve your links forever.</p>
-                  <a class="read_more" href="{% url 'login' %}">Login or Signup</a>
+                  <h1>DURT.IN</h1>
+                  <p>Hi, Welcome. Create short links that are quick to redirect.
+                     We are working on an update that allows you to do more than just shorten links. Soon you'll be able to login to edit your links, track visits anonymously and preserve your links forever.</p>
+                  {% comment %} <a class="read_more" href="{% url 'login' %}">Login or Signup</a> {% endcomment %}
                </div>
                {% endif %}
             </div>

@@ -25,7 +25,6 @@ class Profile(models.Model):
             img.save(self.avatar.path)
 
 class UrlModel(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True)
     id = models.AutoField(primary_key=True, verbose_name='ID')
     original_url = models.URLField(max_length=500)
     short_url = models.CharField(max_length=32, unique=True)  # 10 not 6 because there might be a num added to it
