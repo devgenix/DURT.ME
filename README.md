@@ -22,12 +22,39 @@ This web app has been developed using the popular Django framework and Bootstrap
 ### Quick Start
 To get this project up and running locally on your computer follow the following steps.
 1. Set up a python virtual environment
-2. Run the following commands
+2. Create a .env file and set the following;
+    - EMAIL_HOST_USER=
+    - EMAIL_HOST_PASSWORD=
+    - EMAIL_USER_DEFAULT=
+
+    - GITHUB_KEY=
+    - GITHUB_SECRET=
+
+    - GOOGLE_KEY=
+    - GOOGLE_SECRET=
+
+    - DEBUG=True
+
+    - DJANGO_ALLOWED_HOSTS=127.0.0.1
+
+    - DJANGO_DEVELOPMENT=dev
+
+    - DURT_DB_NAME=
+    - DURT_DB_USER=
+    - DURT_DB_PASSWORD=
+    - DURT_DB_HOST=
+    - DURT_DB_PORT=
+    
+    Set ```DJANGO_DEVELOPMENT``` TO 'dev' for development or to 'prod' for deployment to production.
+
+    Set ```DEBUG``` TO 'True' for development or to 'False' for deployment to production.
+
+3. Run the following commands
     * pip install -r requirements.txt
     * python manage.py makemigrations
     * python manage.py migrate
     * python manage.py createsuperuser
     * python manage.py runserver
    
-3. Open a browser and go to http://localhost:8000/
+4. Open a browser and go to http://localhost:8000/
 
