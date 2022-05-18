@@ -16,7 +16,7 @@ FormButton.addEventListener('click', e => {
   const validate = async (buttonEl, aliasInput, inputField, errorField, errorSV, errorFieldAlias, successField) => {
     const re = /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
     const base_url = "https://durt-link.herokuapp.com/"
-    const api_url = "https://durt-link.herokuapp.com/"
+    const api_url = "https://durt-link.herokuapp.com/api/shorten"
     if (inputField.value.length == 0) {
       inputField.classList.add('error_active');
       errorField.innerHTML = 'Provide a link';
