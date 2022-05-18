@@ -22,7 +22,7 @@ from .forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
 
 def home(request):
     
-    return render(request, 'users/home.html')
+    return redirect(to='login')
 
 @api_view(['POST'])
 @permission_classes([AllowAny])

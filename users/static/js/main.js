@@ -217,7 +217,7 @@ FormButton.addEventListener('click', e => {
 //       /* clipboard write failed */
 //       window.alert('Opps! Your browser does not support the Clipboard API')
 //     }
-//   )
+//  )
 // })
 
 document.querySelector(".copy-button").addEventListener("click", e => {
