@@ -1,6 +1,6 @@
 var $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
-const base_url = window.location.href
-const api_url = window.location.href + 'api/shorten'
+const base_url = "https://durt-link.herokuapp.com/"
+const api_url = 'https://durt-link.herokuapp.com/api/shorten'
 
 const FormButton = document.querySelector('.submitbutton');
 
